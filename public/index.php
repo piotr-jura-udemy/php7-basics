@@ -6,6 +6,7 @@ require __DIR__.'/../vendor/autoload.php';
 use App\Format\JSON;
 use App\Format\XML;
 use App\Format\YAML;
+use App\Format\FormatInterface;
 
 use App\Service\Serializer;
 use App\Controller\IndexController;
@@ -24,16 +25,22 @@ $container->addService('format.xml', function() use ($container) {
 });
 
 $container->addService('format', function() use ($container) {
-    return $container->getService('format.xml');
-});
+    return $container->getService('format.json');
+}, FormatInterface::class);
 
-$container->addService('serializer', function() use ($container) {
-    return new Serializer($container->getService('format'));
-});
+// $container->addService('serializer', function() use ($container) {
+//     return new Serializer($container->getService('format'));
+// });
 
-$container->addService('controller.index', function() use ($container) {
-    return new IndexController($container->getService('serializer'));
-});
+// $container->addService('controller.index', function() use ($container) {
+//     return new IndexController($container->getService('serializer'));
+// });
+
+$container->loadServices('App\\Service');
+$container->loadServices('App\\Controller');
 
 var_dump($container->getServices());
-var_dump($container->getService('controller.index')->index());
+var_dump($container->getService('App\\Controller\\IndexController')
+    ->index());
+var_dump($container->getService('App\\Controller\\PostController')
+    ->index());
