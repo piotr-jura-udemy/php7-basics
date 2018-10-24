@@ -6,7 +6,7 @@ use App\Format\JSON;
 use App\Format\XML;
 use App\Format\YAML;
 
-print_r("Inheritance\n\n");
+print_r("Abstract classes\n\n");
 
 $data = [
     "name" => "John",
