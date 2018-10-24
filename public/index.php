@@ -22,3 +22,17 @@ $formats = [
     new XML($data),
     new YAML($data)
 ];
+
+function findByName(string $name, array $formats): ?BaseFormat {
+    $found = array_filter($formats, function ($format) use ($name) {
+        return $format->getName() === $name;
+    });
+
+    if (count($found)) {
+        return reset($found);
+    }
+
+    return null;
+}
+
+var_dump(findByName('NonExisting', $formats));
