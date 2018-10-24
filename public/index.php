@@ -11,7 +11,7 @@ use App\Service\Serializer;
 use App\Controller\IndexController;
 use App\Container;
 
-print_r("Simple Service Container\n\n");
+print_r("Autowired Service Container\n\n");
 
 $container = new Container();
 
