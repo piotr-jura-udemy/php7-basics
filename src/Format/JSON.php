@@ -5,8 +5,9 @@ namespace App\Format;
 
 class JSON extends BaseFormat 
         implements FromStringInterface,
-        NamedFormatInterface {
-    public function convert()
+        NamedFormatInterface,
+        FormatInterface {
+    public function convert(): string
     {
         return json_encode($this->data);
     }

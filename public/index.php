@@ -10,6 +10,8 @@ use App\Format\FromStringInterface;
 use App\Format\BaseFormat;
 use App\Format\NamedFormatInterface;
 
+use App\Serializer;
+
 print_r("Dependency Injection\n\n");
 
 $data = [
@@ -17,8 +19,11 @@ $data = [
     "surname" => "Doe"
 ];
 
+$serializer = new Serializer(new XML());
+var_dump($serializer->serialize($data));
+
 // $formats = [
-//     new JSON($data),
-//     new XML($data),
-//     new YAML($data)
+//     new JSON(),
+//     new XML(),
+//     new YAML()
 // ];
