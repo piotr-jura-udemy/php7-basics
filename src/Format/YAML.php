@@ -15,7 +15,7 @@ class YAML extends BaseFormat
         return htmlspecialchars($result);
     }
 
-    public function getName() 
+    public function getName(): string
     {
         return 'YAML';
     }

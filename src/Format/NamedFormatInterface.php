@@ -1,7 +1,8 @@
 <?php
+declare(strict_types=1);
 
 namespace App\Format;
 
 interface NamedFormatInterface {
-    public function getName();
+    public function getName(): string;
 }
