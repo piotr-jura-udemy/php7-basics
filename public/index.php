@@ -6,13 +6,10 @@ require __DIR__.'/../vendor/autoload.php';
 use App\Format\JSON;
 use App\Format\XML;
 use App\Format\YAML;
-use App\Format\FromStringInterface;
-use App\Format\BaseFormat;
-use App\Format\NamedFormatInterface;
 
-use App\Serializer;
+use App\Service\Serializer;
 
-print_r("Dependency Injection\n\n");
+print_r("Simple Service Container\n\n");
 
 $data = [
     "name" => "John",
@@ -21,9 +18,3 @@ $data = [
 
 $serializer = new Serializer(new XML());
 var_dump($serializer->serialize($data));
-
-// $formats = [
-//     new JSON(),
-//     new XML(),
-//     new YAML()
-// ];
