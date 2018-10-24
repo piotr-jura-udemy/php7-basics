@@ -10,29 +10,7 @@ use App\Format\FromStringInterface;
 use App\Format\BaseFormat;
 use App\Format\NamedFormatInterface;
 
-print_r("Typed arguments & return types\n\n");
-
-function convertData(BaseFormat $format) {
-    return $format->convert();
-}
-
-function getFormatName(NamedFormatInterface $format): string {
-    return $format->getName();
-}
-
-function getFormatByName(array $formats, string $name): ?BaseFormat {
-    foreach ($formats as $format) {
-        if ($format instanceof NamedFormatInterface && $format->getName() === $name) {
-            return $format;
-        }
-    }
-
-    return null;
-}
-
-function justDumpData(BaseFormat $format): void {
-    return $format->convert();
-}
+print_r("Anonymous functions\n\n");
 
 $data = [
     "name" => "John",
@@ -44,6 +22,3 @@ $formats = [
     new XML($data),
     new YAML($data)
 ];
-
-var_dump(getFormatByName($formats, 'XML'));
-justDumpData($formats[0]);
