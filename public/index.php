@@ -6,27 +6,20 @@ use App\Format\JSON;
 use App\Format\XML;
 use App\Format\YAML;
 
-print_r("Class fields & methods\n\n");
+print_r("Inheritance\n\n");
 
 $json = new JSON([
-    "key" => "value",
-    "another_key" => "another_value"
+    "name" => "John",
+    "surname" => "Doe"
 ]);
 $xml = new XML();
 $yml = new YAML();
 
 var_dump($json);
-// var_dump($xml);
-// var_dump($yml);
+var_dump($xml);
+var_dump($yml);
 
-// $json->data = [];
-var_dump($json->getData());
-// $json->setData([]);
-// var_dump($json->getData());
-
-// var_dump($json->toJSON());
-
+print_r("\n\nResult of conversion\n\n");
 var_dump($json->convert());
-var_dump((string)$json);
-// var_dump(JSON::DATA);
-// var_dump(JSON::convertData());
+// var_dump($xml->convert());
+// var_dump($yml->convert());
