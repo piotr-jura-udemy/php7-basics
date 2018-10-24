@@ -10,7 +10,7 @@ use App\Format\FromStringInterface;
 use App\Format\BaseFormat;
 use App\Format\NamedFormatInterface;
 
-print_r("Anonymous functions\n\n");
+print_r("Reflections\n\n");
 
 $data = [
     "name" => "John",
@@ -23,16 +23,3 @@ $formats = [
     new YAML($data)
 ];
 
-function findByName(string $name, array $formats): ?BaseFormat {
-    $found = array_filter($formats, function ($format) use ($name) {
-        return $format->getName() === $name;
-    });
-
-    if (count($found)) {
-        return reset($found);
-    }
-
-    return null;
-}
-
-var_dump(findByName('NonExisting', $formats));
