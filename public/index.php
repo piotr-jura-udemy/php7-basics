@@ -16,9 +16,17 @@ $xml = new XML();
 $yml = new YAML();
 
 var_dump($json);
-var_dump($xml);
-var_dump($yml);
+// var_dump($xml);
+// var_dump($yml);
+
+// $json->data = [];
+var_dump($json->getData());
+// $json->setData([]);
+// var_dump($json->getData());
+
+// var_dump($json->toJSON());
 
 var_dump($json->convert());
-var_dump(JSON::DATA);
-var_dump(JSON::convertData());
+var_dump((string)$json);
+// var_dump(JSON::DATA);
+// var_dump(JSON::convertData());
