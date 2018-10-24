@@ -8,12 +8,14 @@ use App\Format\YAML;
 
 print_r("Inheritance\n\n");
 
-$json = new JSON([
+$data = [
     "name" => "John",
     "surname" => "Doe"
-]);
-$xml = new XML();
-$yml = new YAML();
+];
+
+$json = new JSON($data);
+$xml = new XML($data);
+$yml = new YAML($data);
 
 var_dump($json);
 var_dump($xml);
@@ -21,5 +23,5 @@ var_dump($yml);
 
 print_r("\n\nResult of conversion\n\n");
 var_dump($json->convert());
-// var_dump($xml->convert());
-// var_dump($yml->convert());
+var_dump($xml->convert());
+var_dump($yml->convert());
