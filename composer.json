@@ -1,7 +1,8 @@
 {
     "name": "php-basics/php-7",
     "require": {
-        "php": ">=7.0.0"
+        "php": ">=7.0.0",
+        "doctrine/annotations": "^1.6"
     },
     "autoload": {
         "psr-4": {
