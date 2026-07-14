@@ -101,7 +101,7 @@ class Container {
             }
 
             $this->addService($serviceName, function () use ($serviceName, $serviceParameters) {
-                foreach ($serviceParameters as &$serviceParameter) {
+                foreach ($serviceParameters as $serviceParameter) {
                     if ($serviceParameter instanceof \Closure) {
                         $serviceParameter = $serviceParameter();
                     }
